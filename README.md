@@ -10,7 +10,7 @@ The contract can be included in a rebar project (as described in section A of th
 Usage
 -----
 
-There are two ways to use the contract provided.
+There are three ways to use the contract provided.
 
 ### A. Automatic building as a rebar3 dependency
 
@@ -22,9 +22,15 @@ Make sure NOT to use `ref` or `tag` tuple (as it will be updated in due time).
 
 The contract compilation target is `/data/aehyperchains/StakingContract.json`, so make sure the dir exists.
 
-Globally registered `rebar3` used; if a project defined one is preferred (which generally is not a good idea), change the `{compile, "rebar3 ...` line in `rebar.config` to `{compile, "./rebar3 ...`
+Building process could use either the included copy of `rebar3` (no changes necessary) or a globally registered one (change the `{compile, "./rebar3 ...` line in `rebar.config` to `{compile, "rebar3 ...`).
 
-### B. Manual building when developing locally
+### B. Manual building with the included copy of rebar3
+
+`./rebar3 compile`
+
+This will produce all the necessary file, including the compiled contract in `./data` dir.
+
+### C. Manual building when developing locally
 
 Dependencies:
 - Docker;
